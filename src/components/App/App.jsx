@@ -7,6 +7,7 @@ import GalleryList from '../GalleryList/GalleryList.jsx'
 function App() {
   let [pictureDescription, setPictureDescription] = useState('');
   let [galleryList, setGalleryList] = useState([]);
+  let [galleryItem, setGalleryItem] = useState([]);
 
   useEffect(() => {
     console.log('useEffect Page Load');
@@ -31,8 +32,9 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <p>Gallery goes here</p>
-        <GalleryItem/>
-        <GalleryList galleryList={galleryList}/>
+        <GalleryItem galleryItem={galleryItem}/>
+        <GalleryList galleryList={galleryList} />
+        <h2>HELLO</h2>
         {/* <img src="images/goat_small.jpg"/> */}
         {/* <img src='images/char1.JPG'/> */}
       </div>
