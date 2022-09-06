@@ -12,9 +12,11 @@ function GalleryItem (picture, like){
     }
 
     return <li key={picture.id}>
-        {picture.name} How many likes goes here
+        {picture.name} Description: {
+        displayDescription()
+        }
         <button onClick={()=> setToggle (!toggle)}
-        {...toggle ? 'Hide' : 'Show'}></button>
+        {...toggle ? 'Hide' : 'Show'}>Toggle</button>
         <button onClick={() => like(picture.id)}>Like</button>
     </li>
 }
