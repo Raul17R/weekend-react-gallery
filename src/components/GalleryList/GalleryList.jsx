@@ -10,8 +10,11 @@ function GalleryList({galleryList}){
             {
                 
                 galleryList.map((gallery) =>{
-                    return <div >
-                         
+                    return <div key={gallery.id}>
+                         <GalleryItem
+                            key={gallery.id}
+                            gallery={gallery}
+                         />
                         <button ><img style={{width:100 + 'px', height:100+'px'}}src={gallery.path}/>
                         </button>
                         {gallery.description}
