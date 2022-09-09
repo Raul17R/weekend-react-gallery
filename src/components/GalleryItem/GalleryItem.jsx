@@ -1,27 +1,28 @@
 import { useState } from "react";
+import galleryItem from '../GalleryItem/GalleryItem.jsx';
 import GalleryList from "../GalleryList/GalleryList.jsx";
-import galleryItem from '../GalleryList/GalleryList.jsx';
 
-function GalleryItem (gallery, like, galleryItem){
+function GalleryItem (gallery,{galleryList}){
     let [toggle, setToggle] = useState (false);
     let galleryDescription = () =>{
         if (toggle === true){
-            return <div>{gallery.description}</div>
+            return <button></button>
         }else{
-            return <div>???</div>
+            return <div>{gallery.description}</div>
         }
     }
 
-    return <li key={gallery.id}>
+    return (
+    <li key={gallery.id}>
         {gallery.description} Description: {
-        galleryDescription()
+            galleryDescription()
         }
         <button onClick={()=> setToggle (!toggle)}
-        {...toggle ? 'Hide' : 'Show'}>Toggle</button>
-        <button onClick={() => like(gallery.like)}>Like</button>
+        {...toggle ? 'Hide' : 'Show'}><img style={{width:100 + 'px', height:100+'px'}}src={gallery.path}/>Hi</button>
+        {/* <button onClick={() => like(gallery.like)}>Like</button> */}
 
     </li>
-    
+    )
 }
 
 export default GalleryItem;

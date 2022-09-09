@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import galleryItems from '../GalleryItem/GalleryItem.jsx';
+import GalleryItem from "../GalleryItem/GalleryItem.jsx";
 
 function GalleryList({galleryList}){
 
@@ -8,7 +8,6 @@ function GalleryList({galleryList}){
     return (
         <div>
             {
-                
                 
                 galleryList.map((gallery) =>{
                     return <div >

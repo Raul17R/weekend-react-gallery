@@ -5,7 +5,6 @@ import GalleryItem from '../GalleryItem/GalleryItem.jsx';
 import GalleryList from '../GalleryList/GalleryList.jsx'
 
 function App() {
-  let [pictureDescription, setPictureDescription] = useState('');
   let [galleryList, setGalleryList] = useState([]);
   let [galleryItem, setGalleryItem] = useState([]);
 
