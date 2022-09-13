@@ -2,23 +2,23 @@ import axios from "axios";
 import { useState } from "react";
 import GalleryItem from "../GalleryItem/GalleryItem.jsx";
 
-function GalleryList({galleryList}){
+function GalleryList({galleryArray, updateLikeImage}){
 
 
     return (
         <div>
             {
                 
-                galleryList.map((gallery) =>{
-                    return <div key={gallery.id}>
-                         <GalleryItem
-                            key={gallery.id}
-                            gallery={gallery}
-                         />
-                        <button ><img style={{width:100 + 'px', height:100+'px'}}src={gallery.path}/>
-                        </button>
-                        {gallery.description}
-                    </div>
+                galleryArray.map((galleryItem) =>{
+                    return (
+                        <div >
+                        <GalleryItem
+                            key={galleryItem.id}
+                            galleryItem={galleryItem}
+                            updateLikeImage={updateLikeImage}
+                        />
+                        </div>
+                    )
                     
                 })
 

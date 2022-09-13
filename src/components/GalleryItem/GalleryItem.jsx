@@ -1,27 +1,22 @@
 import { useState } from "react";
-import galleryItem from '../GalleryItem/GalleryItem.jsx';
-import GalleryList from "../GalleryList/GalleryList.jsx";
 
-function GalleryItem (gallery,{galleryList}){
+
+function GalleryItem ({galleryItem, updateLikeImage}){
     let [toggle, setToggle] = useState (false);
-    let galleryDescription = () =>{
-        if (toggle === true){
-            return <p>{gallery.description}Description</p>
-        }else{
-            return <div><img style={{width:100 + 'px', height:100+'px'}}src={gallery.path}></img></div>
-        }
-    }
+    
     // galleryList.map((gallery) =>{
     return (
-    <li key={gallery.id}>
-        {gallery.description} Description: {
-            galleryDescription()
-        }
-        <button onClick={()=> setToggle (!toggle)}
-        {...toggle ? 'Hide' : 'Show'}><img style={{width:100 + 'px', height:100+'px'}}src={gallery.path}/></button>
-        {/* <button onClick={() => like(gallery.like)}>Like</button> */}
+        <div>
+        <button onClick={()=> setToggle(!toggle)}>
+        {toggle ? <p>{galleryItem.description}</p>
+        :
+        <img style={{ width: 100 + 'px', height: 100 + 'px' }} src={galleryItem.path}/>
 
-    </li>
+    }
+    </button>
+    <button onClick={()=>updateLikeImage(galleryItem.id)}>Like</button>
+    <p>How many Likes= {galleryItem.likes}</p>
+    </div>
     )
 // })
 }
