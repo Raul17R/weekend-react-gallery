@@ -30,7 +30,7 @@ function App() {
 
    const updateLikeImage = (galleryId) =>{
     axios({
-      methos:'PUT',
+      method:'PUT',
       url: `/gallery/like/${galleryId}`,
     }).then(response =>{
       fetchGalleryList();
