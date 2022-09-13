@@ -5,7 +5,7 @@ import GalleryList from '../GalleryList/GalleryList.jsx'
 
 function App() {
   let [galleryArray, setGalleryArray] = useState([]);
-  let [updateLikeImage, setlikeImage] = useState(0);
+  let [likeImage, setlikeImage] = useState(0);
 
   useEffect(() => {
     console.log('useEffect Page Load');
@@ -28,10 +28,10 @@ function App() {
 
 
 
-   const likeImage = (galleryId) =>{
+   const updateLikeImage = (galleryId) =>{
     axios({
       methos:'PUT',
-      url: `/gallery/likes/${galleryId}`,
+      url: `/gallery/like/${galleryId}`,
     }).then(response =>{
       fetchGalleryList();
     }).catch((error) =>{

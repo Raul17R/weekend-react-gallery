@@ -3,7 +3,7 @@ import { useState } from "react";
 
 function GalleryItem ({galleryItem, updateLikeImage}){
     let [toggle, setToggle] = useState (false);
-    
+
     // galleryList.map((gallery) =>{
     return (
         <div>
@@ -14,8 +14,8 @@ function GalleryItem ({galleryItem, updateLikeImage}){
 
     }
     </button>
-    <button onClick={()=>updateLikeImage(galleryItem.id)}>Like</button>
-    <p>How many Likes= {galleryItem.likes}</p>
+    <button onClick={()=>updateLikeImage(galleryItem.id)}>Like</button> 
+    <p>How many Likes={galleryItem.likes}</p>
     </div>
     )
 // })
