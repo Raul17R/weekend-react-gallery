@@ -1,0 +1,14 @@
+.images {
+  float: left;
+  /* flex-direction: column;
+  align-items: center;
+  width: 45%;
+  margin: 0 0 1em 0;
+  padding: 1em;
+  border: 1px solid green; */
+  padding-left: 100px;
+}
+
+.likes{
+    float: left;
+}

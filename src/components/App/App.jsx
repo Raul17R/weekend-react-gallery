@@ -25,9 +25,7 @@ function App() {
         alert('Something went wrong in GET');
       })
     }
-
-
-
+  
    const updateLikeImage = (galleryId) =>{
     axios({
       method:'PUT',
@@ -44,11 +42,13 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <p>Gallery goes here</p>
-        <GalleryList galleryArray={galleryArray}
-        updateLikeImage={updateLikeImage}
+        {/* <div className='images'> */}
+          <div className='images'></div>
+            <GalleryList galleryArray={galleryArray}
+            updateLikeImage={updateLikeImage}
         />
-        <h2>HELLO</h2>
+        {/* </div> */}
+        {/* <h2>HELLO</h2> */}
         {/* <img src="images/goat_small.jpg"/> */}
         {/* <img src='images/char1.JPG'/> */}
       </div>
