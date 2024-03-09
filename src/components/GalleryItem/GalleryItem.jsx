@@ -20,9 +20,23 @@ function GalleryItem ({galleryItem, updateLikeImage}){
 
     // galleryList.map((gallery) =>{
     return (
-        <div className="images">
-        <Card className="Card" sx={{maxWidth: 345}}>
+        <div className="flip-box">
+            <div className="flip-box-inner">
+            
+                        <div className="flip-box-front">       
+                        <img style={{ width: 200 + 'px', height: 200 + 'px' }} src={galleryItem.path}/>                     
+                        </div>
+                  <div className="flip-box-back">
+                        <div className="likes">                        
+                            <Button endIcon={<ThumbUpIcon/>} variant="text" onClick={()=>updateLikeImage(galleryItem.id)}>Like {galleryItem.likes}</Button> 
+                            <Button endIcon={<ShareIcon/>} variant="contained">Share</Button>      
+                            <p className="paragraph">{galleryItem.description}</p>                  
+                        </div>
+                    </div>
+            </div>
         
+            
+        {/* <Card className="Card" sx={{maxWidth: 345}}>
             <CardMedia sx={{height:200}}>
                 <Button variant="contained" onClick={()=> setToggle(!toggle)}>
                     {toggle ? <p>{galleryItem.description}</p>
@@ -43,7 +57,7 @@ function GalleryItem ({galleryItem, updateLikeImage}){
                     </div>
                      </CardContent>
             </CardMedia>
-        </Card>
+        </Card> */}
          </div>
       
     )
