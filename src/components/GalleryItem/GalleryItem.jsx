@@ -21,8 +21,7 @@ function GalleryItem ({galleryItem, updateLikeImage}){
     // galleryList.map((gallery) =>{
     return (
         <div className="flip-box">
-            <div className="flip-box-inner">
-            
+            <div className="flip-box-inner">            
                         <div className="flip-box-front">       
                         <img style={{ width: 200 + 'px', height: 200 + 'px' }} src={galleryItem.path}/>                     
                         </div>
